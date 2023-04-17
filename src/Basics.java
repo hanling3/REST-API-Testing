@@ -2,6 +2,9 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 //Eclipse does not give auto suggestion for static libraries
 
+import org.testng.Assert;
+
+import files.ReUsableMethods;
 import files.payload;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -65,12 +68,13 @@ public class Basics {
             .then().assertThat().log().all().statusCode(200)
             .extract().response().asString();
 
-        JsonPath js1= new JsonPath(getPlaceResponse);
+        JsonPath js1= ReUsableMethods.rawToJson(getPlaceResponse); // to improve readability
         String actualAddress= js1.getString("address");
 
         System.out.println(actualAddress);
 
-        // Cucumber Junit, Testng
+        // TestNG
+        Assert.assertEquals(actualAddress, newAddress);
 
     }
 
