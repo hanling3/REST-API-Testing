@@ -11,17 +11,21 @@ public class Basics {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 
-        // validate if Add Place API is working as expected
+        // Validate if Add Place API is working as expected
+
+        // Add place
+        // -> Update place with new address
+        // -> Get place to validate if new address is present in response
 
         RestAssured.baseURI= "https://rahulshettyacademy.com";
-        // given - all input details
+        // ---------- given - all input details ----------
         String response= given().log().all()
             .queryParam("key", "qaclick123")
             .header("Content-Type", "application/json")
             .body(payload.AddPlace())
-            // when - submit the API - resource, http method
+            // ---------- when - submit the API - resource, http method ----------
             .when().post("maps/api/place/add/json")
-            // then - validate the response
+            // ---------- then - validate the response ----------
             .then()
             .statusCode(200)
             .body("scope", equalTo("APP"))
@@ -35,8 +39,38 @@ public class Basics {
 
         System.out.println(placeId);
 
-        // Add place -> Update place with new address
-        // -> Get place to validate if new address is present in response
+        // Update place
+
+        String newAddress= "70 Summer walk, USA";
+
+        given().log().all()
+            .queryParam("key", "qaclick123")
+            .header("Content-Type", "application/json")
+            .body("{\n" +
+                "    \"place_id\":\"" + placeId + "\",\n" +
+                "    \"address\":\"" + newAddress + "\",\n" +
+                "    \"key\":\"qaclick123\"\n" +
+                "}\n" +
+                "")
+            .when().put("maps/api/place/update/json")
+            .then().assertThat().log().all().statusCode(200)
+            .body("msg", equalTo("Address successfully updated"));
+
+        // Get place
+
+        String getPlaceResponse= given().log().all()
+            .queryParam("key", "qaclick123")
+            .queryParam("place_id", placeId)
+            .when().get("maps/api/place/get/json")
+            .then().assertThat().log().all().statusCode(200)
+            .extract().response().asString();
+
+        JsonPath js1= new JsonPath(getPlaceResponse);
+        String actualAddress= js1.getString("address");
+
+        System.out.println(actualAddress);
+
+        // Cucumber Junit, Testng
 
     }
 
