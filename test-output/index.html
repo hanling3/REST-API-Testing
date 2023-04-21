@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +101,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="SumValidation" class="method navigator-link" hash-for-method="sumOfCourses">sumOfCourses</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="files.DynamicJson" class="method navigator-link" hash-for-method="deleteBook(inabc, 9741)">deleteBook(inabc, 9741)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="files.DynamicJson" class="method navigator-link" hash-for-method="deleteBook(giav, 8495)">deleteBook(giav, 8495)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="files.DynamicJson" class="method navigator-link" hash-for-method="deleteBook(sfdgs, 2738)">deleteBook(sfdgs, 2738)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -119,14 +129,31 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">SumValidation</span>
+              <span class="class-name">files.DynamicJson</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="sumOfCourses">
-                  </a> <!-- sumOfCourses -->
-                  <span class="method-name">sumOfCourses</span>
+                  <a name="deleteBook(inabc, 9741)">
+                  </a> <!-- deleteBook(inabc, 9741) -->
+                  <span class="method-name">deleteBook</span>
+                  <span class="parameters">(inabc, 9741)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteBook(giav, 8495)">
+                  </a> <!-- deleteBook(giav, 8495) -->
+                  <span class="method-name">deleteBook</span>
+                  <span class="parameters">(giav, 8495)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteBook(sfdgs, 2738)">
+                  </a> <!-- deleteBook(sfdgs, 2738) -->
+                  <span class="method-name">deleteBook</span>
+                  <span class="parameters">(sfdgs, 2738)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -134,7 +161,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/f9/np5nf0qs4mdcgqkvss2j53fh0000gn/T/testng-eclipse-887837607/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/f9/np5nf0qs4mdcgqkvss2j53fh0000gn/T/testng-eclipse--965019189/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -143,7 +170,7 @@
 &lt;suite parallel=&quot;none&quot; name=&quot;Default suite&quot;&gt;
   &lt;test name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;SumValidation&quot;/&gt;
+      &lt;class name=&quot;files.DynamicJson&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -183,16 +210,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'sumOfCourses')
-data.setCell(0, 2, 'SumValidation')
-data.setCell(0, 3, 869);
+data.setCell(0, 1, 'deleteBook')
+data.setCell(0, 2, 'files.DynamicJson')
+data.setCell(0, 3, 1485);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'deleteBook')
+data.setCell(1, 2, 'files.DynamicJson')
+data.setCell(1, 3, 727);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'deleteBook')
+data.setCell(2, 2, 'files.DynamicJson')
+data.setCell(2, 3, 618);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 869 ms</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -218,10 +253,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">SumValidation</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">files.DynamicJson</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">sumOfCourses</span>
+                <span class="method-name">deleteBook(sfdgs, 2738)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">deleteBook(giav, 8495)</span>
+                <span class="method-start">1486 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">deleteBook(inabc, 9741)</span>
+                <span class="method-start">2105 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

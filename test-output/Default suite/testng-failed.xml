@@ -3,11 +3,11 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="SumValidation">
+      <class name="files.DynamicJson">
         <methods>
-          <include name="sumOfCourses"/>
+          <include name="addBook" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- SumValidation -->
+      </class> <!-- files.DynamicJson -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
