@@ -2,16 +2,19 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 //Eclipse does not give auto suggestion for static libraries
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import org.testng.Assert;
 
 import files.ReUsableMethods;
-import files.payload;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 public class Basics {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO Auto-generated method stub
 
         // Validate if Add Place API is working as expected
@@ -25,7 +28,8 @@ public class Basics {
         String response= given().log().all()
             .queryParam("key", "qaclick123")
             .header("Content-Type", "application/json")
-            .body(payload.AddPlace())
+            .body(new String( // convert the content of the file to Byte, and then to string
+                Files.readAllBytes(Paths.get("/Users/hedyyang/Documents/Paths/AddPlace.json"))))
             // ---------- when - submit the API - resource, http method ----------
             .when().post("maps/api/place/add/json")
             // ---------- then - validate the response ----------
